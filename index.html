@@ -25,6 +25,8 @@
         const onClick = () => {
             setCounter (counter + 1); 
         }; //Re-render automatically
+        console.log("rendered");
+        console.log("counter: ", counter);
         return (
             <div>
                 <h3>Total clicks: {counter}</h3>
