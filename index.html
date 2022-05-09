@@ -19,26 +19,21 @@
     //Everything starts as a JS to become a HTML document, it can control that user can see
     //JSX similar to HTML
     const root = document.getElementById("root");
-    let counter = 0;
-    function countUp() {
-        counter = counter + 1;
-        render();
-    }
-
-    function render() {
-        ReactDOM.render(<Container />, root);
-        //Re-render to show the counter that has been changed
-    }
-
-    function Container() {
+    function App() {
+        //first : value(data), second : function
+        const [counter, setCounter] = React.useState(0);
+        const onClick = () => {
+            setCounter (counter + 1); 
+        }; //Re-render automatically
         return (
             <div>
                 <h3>Total clicks: {counter}</h3>
-                <button onClick={countUp}>Click me</button>
+                <button onClick={onClick}>Click me</button>
             </div>
         );
     }
-    render();
+    ReactDOM.render(<App />, root);
+    //Re-render to show the counter that has been changed
     //Load only one time
     //Component(function) should have to be uppercase. i.e. Title, Button is same as copy and paste
     //React element -> HTML document (inside of root)
