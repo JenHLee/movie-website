@@ -17,13 +17,27 @@
 <script>
     //Everything starts as a JS to become a HTML document, it can control that user can see
     const root = document.getElementById("root");
-    const span = React.createElement(
-        "span", 
-        { id: "sexy-span" }, 
-        "Hello I'm span");
-    ReactDOM.render(span, root);
+    const h3 = React.createElement(
+        "h3",
+        {
+            id : "title",
+            onMouseEnter: () => console.log("mouse enter"), //event camel style
+        }, "Hello I'm h3"
+    );
+    const btn = React.createElement(
+        "button",
+        {
+            id: "btn",
+            onClick: () => console.log("I'm clicked"),
+            style: {
+                backgroundColor : "tomato",
+            }
+        },
+        "Click me");
+    const container = React.createElement("div", null, [h3, btn]);
+    ReactDOM.render(container, root);
         //React element -> HTML document (inside of root)
-        
+
 
 </script>
 
