@@ -19,40 +19,71 @@
     //Everything starts as a JS to become a HTML document, it can control that user can see
     //JSX similar to HTML
     function App() {
-        const [minutes, setMinutes] = React.useState();
+        const [amount, setAmount] = React.useState();
         //array's first item is value(current), second is function that when value was changed and component to re-render.
+        const [flipped, setFlipped] = React.useState(false);
+        /*
+        flipped default is: false => hour disabled: true.
+        flipped: true => hour: false
+        */
         const onChange = (event) => {
-            /*console.log("somebody wrote");
+            /*
+            console.log("somebody wrote");
             console.log(event);
             console.log(event.target.value);
-            target is input that is changed right before.*/
-            setMinutes(event.target.value);
+            target is input that is changed right before.
+            */
+            setAmount(event.target.value);
         }
-        const reset =() => setMinutes(0);
+        const reset = () => setAmount(0);
+        const onFlip = () => {
+            reset();
+            setFlipped(current => !current);
+            /* 
+            if filpped is true !filpped is false | if filpped is false !flipped is true. (!flipped) 
+            but if flipped is changed, the result can be changed so we'd better to use current than flipped.
+            */
+        };
 
         return (
             <div>
                 <h1 className="h1">Super Converter</h1>
                 <div><label htmlfor="minutes">Minutes</label>
                     <input
-                        value= {minutes}
+                        value={flipped ? amount * 60 : amount}
+                        /*
+                        if flipped is true -> math
+                        */
                         id="minutes"
                         placeholder="Minutes"
                         type="number"
                         onChange={onChange}
+                        disabled={flipped}
+                    //same as flipped === true
+                    //flipped === true  => minutes disabled === true
                     />
                 </div>
                 <div>
                     <label htmlfor="hours">Hours</label>
                     <input
-                        value={Math.round(minutes / 60)}
+                        value={flipped ? amount : Math.round(amount / 60)}
+                        /*
+                        if flipped is true -> show the changed the value (Math.round(amount / 60)),
+                        if flipped is false -> show the chnaged the value of amount.  
+                        */
                         id="hours"
                         placeholder="Hours"
                         type="number"
-                        disabled
+                        onChange={onChange}
+                        disabled={!flipped}
+                    //same as flipped === false
+                    //flipped === false  => hours disabled === true
+
+
                     />
                 </div>
                 <button onClick={reset}>Reset</button>
+                <button onClick={onFlip}>Flip</button>
             </div>
         );
     }
