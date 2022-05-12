@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <title>Unit Converter</title>
 </head>
 
 <body>
@@ -15,76 +17,49 @@
 <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
 <script type="text/babel">
     //Everything starts as a JS to become a HTML document, it can control that user can see
     //JSX similar to HTML
-    function App() {
-        const [amount, setAmount] = React.useState();
-        //array's first item is value(current), second is function that when value was changed and component to re-render.
-        const [flipped, setFlipped] = React.useState(false);
+
+    function Btn({text, big}) {
         /*
-        flipped default is: false => hour disabled: true.
-        flipped: true => hour: false
+        Can use props instead of {} 
+        Component is function
+        props is first and only argument that we recive.
+        console.log(props);
+        props is object
+        console.log(props.text);
+        Can get the text of props.
         */
-        const onChange = (event) => {
-            /*
-            console.log("somebody wrote");
-            console.log(event);
-            console.log(event.target.value);
-            target is input that is changed right before.
-            */
-            setAmount(event.target.value);
-        }
-        const reset = () => setAmount(0);
-        const onFlip = () => {
-            reset();
-            setFlipped(current => !current);
-            /* 
-            if filpped is true !filpped is false | if filpped is false !flipped is true. (!flipped) 
-            but if flipped is changed, the result can be changed so we'd better to use current than flipped.
-            */
-        };
+       console.log(text, big);
+        return (
+            <button
+                style={{
+                    backgroundColor: "tomato",
+                    color: "white",
+                    padding: "10px 20px",
+                    border: 0,
+                    borderRadius: 10,
+                    fontSize: big ? 30: 16,
+                    //depend on the big(value => can control the style)
+                }}
+            >
+               {text}
+            </button>
+            //no need to vectic.
+        );
+    }
+
+    function App() {
 
         return (
             <div>
-                <h1 className="h1">Super Converter</h1>
-                <div><label htmlfor="minutes">Minutes</label>
-                    <input
-                        value={flipped ? amount * 60 : amount}
-                        /*
-                        if flipped is true -> math
-                        */
-                        id="minutes"
-                        placeholder="Minutes"
-                        type="number"
-                        onChange={onChange}
-                        disabled={flipped}
-                    //same as flipped === true
-                    //flipped === true  => minutes disabled === true
-                    />
-                </div>
-                <div>
-                    <label htmlfor="hours">Hours</label>
-                    <input
-                        value={flipped ? amount : Math.round(amount / 60)}
-                        /*
-                        if flipped is true -> show the changed the value (Math.round(amount / 60)),
-                        if flipped is false -> show the chnaged the value of amount.  
-                        */
-                        id="hours"
-                        placeholder="Hours"
-                        type="number"
-                        onChange={onChange}
-                        disabled={!flipped}
-                    //same as flipped === false
-                    //flipped === false  => hours disabled === true
-
-
-                    />
-                </div>
-                <button onClick={reset}>Reset</button>
-                <button onClick={onFlip}>Flip</button>
+                <Btn text="Save Changes" big={true}/>
+                <Btn text="Confirm" big={false}/> 
             </div>
+            //Inside of JSX
+            //It's sent into first argument 
         );
     }
 
