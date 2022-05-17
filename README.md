@@ -19,7 +19,6 @@ Retro window design' 5 types of unit converter using React.js.
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/></a> CSS
 
 ## :computer: Live Demo
-https://jenhlee.github.io/react-unit-converter/
 ![react-unit-converter](https://user-images.githubusercontent.com/97131199/168738591-e4bb62f0-aa61-462d-b210-fe430b68494f.gif)
 
 
