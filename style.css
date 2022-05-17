@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+
+body {
+    padding-top: 50px;
+    padding: auto;
+    margin: auto;
+
+    background-color: #99D9D9;
+}
+
+#div-top {
+    height: 300px;
+}
+
+#divbox {
+    background-color: rgb(246, 246, 246);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    padding-bottom: 2px;
+    border-bottom: solid 2px;
+}
+
+#unitbox {
+    padding: auto;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#root {
+    margin: 50px auto auto auto;
+    padding: auto;
+    align-items: center;
+    background-color: #FFEDD1;
+    width: 800px;
+    border-radius: 10px;
+    border: solid black 2px;
+}
+
+#title {
+
+    font-family: 'Roboto Mono', monospace;
+}
+
+#h3 {
+    padding-top: 0;
+    margin-top: 0;
+    margin-left: 0;
+    background-color: #EFA593;
+    padding-left: 15px;
+    font-size: 15px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom: solid black 2px;
+
+}
+
+#minus {
+    padding-left: 590px;
+}
+
+#square, #multiply {
+    padding-left: 5px;
+}
+
+#minutes, #km {
+    display: flexbox;
+    flex: 1;
+}
+
+#hours, #miles {
+    display: flexbox;
+    flex: 2;
+}
+
+select {
+    margin: auto;
+    padding: 3px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    border: none;
+    font-weight: bold;
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 10px;
+    background-color: rgb(229, 229, 229);  
+}
+
+#selectbox {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+   
+}
+
+div, input {
+    font-family: 'Roboto Mono', monospace;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    color: #777777;
+}
+
+#btnbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+#unitbox{
+    padding-top: 50px;
+    font-weight: bold;
+}
