@@ -1,5 +1,5 @@
 # React Unit Converter
-Retro window design' 5 types of unit converter using React.js. 
+Retro window design' Several types of unit converter using React.js. 
 - Minutes to Hours
 - Kilometers to Miles
 - Meters to Centimeters
